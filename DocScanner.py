@@ -108,8 +108,8 @@ def warp_image(image, H, width, height):
                     output[v, u] = image[int(y), int(x)]
     return output
 
-
-img = cv2.imread('document3.jpeg')
+image = input("Masukkan nama file: ")
+img = cv2.imread(image)
 img_grayscale = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 corners = docsDetector(img_grayscale)
 if corners is None or len(corners) != 4:
@@ -123,4 +123,5 @@ cv2.imshow("Warped Document", output)
 key = cv2.waitKey(0)
 if key == 27:
     cv2.destroyAllWindows()
+
 cv2.destroyAllWindows()
